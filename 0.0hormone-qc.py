@@ -2,6 +2,7 @@
 import numpy as np
 import pandas as pd
 import seaborn as sns
+import matplotlib.pyplot as plt
 
 from os.path import join
 
@@ -359,52 +360,56 @@ g.savefig(
     bbox_inches="tight"
 )
 
-
+fig,ax = plt.subplots()
 g = sns.histplot(
     df.swaplevel(0).loc['baseline_year_1_arm_1'], 
     x='filtered_dhea',
     hue='demo_sex',
     fill=True,
     #palette='Set2'
-    palette=husl
+    palette=husl,
+    ax=ax
 )
 sns.despine()
 g.set_xlabel('DHEA (pg/mL)')
-g.savefig(
+fig.savefig(
     join(PROJ_DIR, FIGS_DIR, "dhea_by_sex-baseline.png"), 
     dpi=400, 
     bbox_inches="tight"
 )
 
-
+fig,ax = plt.subplots()
 g = sns.histplot(
     df.swaplevel(0).loc['baseline_year_1_arm_1'], 
     x='filtered_ert',
     hue='demo_sex',
     fill=True,
-    palette=husl
+    palette=husl,
+    ax=ax
 )
 sns.despine()
 g.set_xlabel('Testosterone (pg/mL)')
 g.set_xlim(0,200)
-g.savefig(
+fig.savefig(
     join(PROJ_DIR, FIGS_DIR, "testosterone_by_sex-baseline.png"), 
     dpi=400, 
     bbox_inches="tight"
 )
 
+fig,ax = plt.subplots()
 g = sns.histplot(
     df.swaplevel(0).loc['baseline_year_1_arm_1'], 
     x='filtered_hse',
     hue='demo_sex',
     fill=True,
-    palette=husl
+    palette=husl,
+    ax=ax
 )
 sns.despine()
 g.set_xlabel('Estradiol (pg/mL)')
 g.set_ylabel('Count')
 g.get_legend().remove()
-g.savefig(
+fig.savefig(
     join(PROJ_DIR, FIGS_DIR, "estradiol_by_sex-baseline.png"), 
     dpi=400, 
     bbox_inches="tight"
