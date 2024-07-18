@@ -1,3 +1,5 @@
 **/.vscode
 **/.nii.gz
 **/.DSStore
+notebooks/**
+.ipynb_checkpoints/*
