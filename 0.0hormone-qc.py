@@ -6,7 +6,7 @@ import seaborn as sns
 from os.path import join
 
 
-ABCD_DIR = "/Volumes/projects_herting/LABDOCS/PROJECTS/ABCD/Data/release5.0/abcd-data-release-5.1/core/"
+ABCD_DIR = "/Volumes/projects_herting/LABDOCS/PROJECTS/ABCD/Data/release5.1/abcd-data-release-5.1/core/"
 
 PROJ_DIR = "/Volumes/projects_herting/LABDOCS/Personnel/Katie/kangaroo_aim1/"
 DATA_DIR = "data/"
